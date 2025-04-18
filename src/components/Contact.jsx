@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,27 +24,46 @@ function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage({
-        type: 'success',
-        text: 'Your message has been sent successfully!'
+    // Replace these with your actual EmailJS credentials
+    const serviceId = 'service_hpgftzo';
+    const templateId = 'template_g2ph7tm';
+    const publicKey = 'RStAxwmiIL01zHFHu';
+    
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        setIsSubmitting(false);
+        setSubmitMessage({
+          type: 'success',
+          text: 'Your message has been sent successfully!'
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        // Clear message after 5 seconds
+        setTimeout(() => {
+          setSubmitMessage(null);
+        }, 5000);
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error.text);
+        setIsSubmitting(false);
+        setSubmitMessage({
+          type: 'error',
+          text: 'Failed to send message. Please try again later.'
+        });
+        
+        // Clear error message after 5 seconds
+        setTimeout(() => {
+          setSubmitMessage(null);
+        }, 5000);
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      // Clear message after 5 seconds
-      setTimeout(() => {
-        setSubmitMessage(null);
-      }, 5000);
-    }, 1500);
   };
 
   return (
@@ -70,7 +91,7 @@ function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white">Email</h4>
-                    <a href="mailto:your.email@example.com" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300">
+                    <a href="mailto:puhandurgsankarp@gmail.com" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300">
                       puhandurgsankarp@gmail.com
                     </a>
                   </div>
@@ -84,7 +105,7 @@ function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white">Phone</h4>
-                    <a href="tel:+1234567890" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300">
+                    <a href="tel:+917205882737" className="text-gray-300 hover:text-indigo-400 transition-colors duration-300">
                       +91 7205882737
                     </a>
                   </div>
@@ -99,13 +120,12 @@ function Contact() {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white">Location</h4>
-                    <p className="text-gray-300">Bhubaneswar,ODISHA</p>
+                    <p className="text-gray-300">Bhubaneswar, ODISHA</p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8 flex space-x-4">
-             
                 <a href="https://www.instagram.com/puhandurgasankar/" className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors duration-300">
                   <svg className="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -129,7 +149,7 @@ function Contact() {
             <div className="bg-gray-900 rounded-xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold mb-6 text-white">Send Me a Message</h3>
               
-              <form onSubmit={handleSubmit}>
+              <form ref={form} onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                   <div>
                     <label htmlFor="name" className="block text-gray-300 mb-2">Your Name</label>

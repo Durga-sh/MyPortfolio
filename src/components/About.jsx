@@ -45,7 +45,7 @@ function About() {
                 <p className="text-gray-300"><span className="font-bold text-indigo-400">Location:</span>Bhubaneswar,Odisha</p>
               </div>
               <div>
-                <p className="text-gray-300"><span className="font-bold text-indigo-400">Experience:</span> 21 Years</p>
+                <p className="text-gray-300"><span className="font-bold text-indigo-400">Experience:</span> 21Years</p>
               </div>
             </div>
             
