@@ -9,6 +9,7 @@ function Resume() {
       degree: "Bachelor's in Computer Science",
       institution: "Centurion University Of Technology And Management",
       duration: "2022 - 2026",
+      CGPA:"9.1",
       description: "Graduated with honors. Participated in various coding competitions and hackathons.",
     },
   ];
@@ -36,20 +37,11 @@ function Resume() {
 
   const certifications = [
     {
-      name: "AWS Certified Developer",
+      name: "AWS Cloud Foundation",
       issuer: "Amazon Web Services",
-      year: "2023",
-    },
-    {
-      name: "Professional Scrum Master I",
-      issuer: "Scrum.org",
-      year: "2022",
-    },
-    {
-      name: "React Certified Developer",
-      issuer: "React Training",
-      year: "2021",
-    },
+      year: "2024",
+    }
+
   ];
 
   return (
@@ -67,20 +59,12 @@ function Resume() {
                 activeTab === 'education' 
                   ? 'bg-indigo-600 text-white' 
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  
               }`}
             >
               Education
             </button>
-            <button
-              onClick={() => setActiveTab('experience')}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === 'experience' 
-                  ? 'bg-indigo-600 text-white' 
-                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-              }`}
-            >
-              Experience
-            </button>
+       
             <button
               onClick={() => setActiveTab('certifications')}
               className={`px-4 py-2 text-sm font-medium rounded-r-lg ${

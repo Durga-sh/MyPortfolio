@@ -36,16 +36,16 @@ function About() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 animate delay-4">
               <div>
-                <p className="text-gray-300"><span className="font-bold text-indigo-400">Name:</span> Your Name</p>
+                <p className="text-gray-300"><span className="font-bold text-indigo-400">Name:</span>Durgashankar Puhan</p>
               </div>
               <div>
-                <p className="text-gray-300"><span className="font-bold text-indigo-400">Email:</span> your.email@example.com</p>
+                <p className="text-gray-300"><span className="font-bold text-indigo-400">Email:</span> puhandurgsankarp@gmail.com</p>
               </div>
               <div>
-                <p className="text-gray-300"><span className="font-bold text-indigo-400">Location:</span> Your City, Country</p>
+                <p className="text-gray-300"><span className="font-bold text-indigo-400">Location:</span>Bhubaneswar,Odisha</p>
               </div>
               <div>
-                <p className="text-gray-300"><span className="font-bold text-indigo-400">Experience:</span> X Years</p>
+                <p className="text-gray-300"><span className="font-bold text-indigo-400">Experience:</span> 21 Years</p>
               </div>
             </div>
             
