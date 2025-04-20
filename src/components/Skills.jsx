@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+"use client"
+import { motion } from "framer-motion"
 
 function Skills() {
   const skills = [
@@ -8,12 +8,24 @@ function Skills() {
     { name: "React.js", percentage: 90 },
     { name: "Node.js", percentage: 95 },
     { name: "TypeScript", percentage: 70 },
-    { name: "Spring Boot", percentage: 90},
+    { name: "Spring Boot", percentage: 90 },
     { name: "MongoDB", percentage: 90 },
     { name: "Database Management", percentage: 75 },
-  ];
+  ]
 
-  const technologies = ["Java", "JavaScript", "React", "Next.js", "Node.js", "Express", "Spring Boot", "MongoDB", "MySQL", "Tailwind CSS", "Material UI"];
+  const technologies = [
+    "Java",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "Spring Boot",
+    "MongoDB",
+    "MySQL",
+    "Tailwind CSS",
+    "Material UI",
+  ]
 
   return (
     <section id="skills" className="py-20 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
@@ -22,9 +34,9 @@ function Skills() {
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-purple-700 rounded-full filter blur-[120px]"></div>
         <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-violet-700 rounded-full filter blur-[120px]"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <motion.h2 
+        <motion.h2
           className="text-3xl md:text-4xl font-bold text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,10 +45,10 @@ function Skills() {
         >
           My <span className="text-violet-500">Skills</span>
         </motion.h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {skills.map((skill, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +62,7 @@ function Skills() {
                 <span className="text-violet-400">{skill.percentage}%</span>
               </div>
               <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   className="h-full bg-gradient-to-r from-violet-600 to-purple-600 rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.percentage}%` }}
@@ -61,8 +73,8 @@ function Skills() {
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,17 +84,17 @@ function Skills() {
           <h3 className="text-2xl font-bold mb-6">Technologies I Work With</h3>
           <div className="flex flex-wrap justify-center gap-6">
             {technologies.map((tech, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="bg-gray-800/50 rounded-lg px-5 py-3 text-gray-200 shadow-lg border border-gray-700/50 hover:border-violet-500/50 hover:shadow-violet-500/20 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
                 viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.05, 
+                whileHover={{
+                  scale: 1.05,
                   backgroundColor: "rgba(139, 92, 246, 0.2)",
-                  color: "#d8b4fe"
+                  color: "#d8b4fe",
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -93,7 +105,7 @@ function Skills() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Skills;
+export default Skills
