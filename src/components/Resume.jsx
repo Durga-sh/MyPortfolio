@@ -18,22 +18,8 @@ function Resume() {
 
   const experience = [
     {
-      position: "Senior Software Developer",
-      company: "Tech Company",
-      duration: "2021 - Present",
-      description: "Lead developer for client projects, mentoring junior developers, and implementing best practices.",
-    },
-    {
-      position: "Full Stack Developer",
-      company: "Digital Agency",
-      duration: "2019 - 2021",
-      description: "Developed and maintained web applications using React.js, Node.js, and MongoDB.",
-    },
-    {
-      position: "Junior Web Developer",
-      company: "Startup Name",
-      duration: "2017 - 2019",
-      description: "Created responsive websites and assisted in developing the company's core product.",
+    
+      description: "Curremtly I am a Fresher.",
     },
   ]
 
