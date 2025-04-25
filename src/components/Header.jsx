@@ -40,22 +40,25 @@ function Header({ activeSection, setActiveSection }) {
   };
 
   const handleNavClick = (section) => {
-    const targetElement = document.getElementById(section);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: "smooth",
-      });
+    // First close the mobile menu
+    setIsMenuOpen(false);
 
-      // Update URL hash without adding to history
-      window.history.replaceState(null, null, `#${section}`);
+    // Small delay to ensure menu closing animation starts before scrolling
+    setTimeout(() => {
+      const targetElement = document.getElementById(section);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: "smooth",
+        });
 
-      // Update active section in state
-      setActiveSection(section);
+        // Update URL hash without adding to history
+        window.history.replaceState(null, null, `#${section}`);
 
-      // Close mobile menu if open
-      setIsMenuOpen(false);
-    }
+        // Update active section in state
+        setActiveSection(section);
+      }
+    }, 10);
   };
 
   return (
@@ -90,6 +93,7 @@ function Header({ activeSection, setActiveSection }) {
             className="text-white focus:outline-none"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            aria-label="Toggle menu"
           >
             <svg
               className="h-6 w-6"
@@ -158,25 +162,21 @@ function Header({ activeSection, setActiveSection }) {
             )}
           </motion.ul>
         </nav>
+      </div>
 
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.nav
-              className="absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md md:hidden overflow-hidden"
-              variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-            >
-              <ul className="flex flex-col p-4">
-                {[
-                  "home",
-                  "about",
-                  "skills",
-                  "resume",
-                  "projects",
-                  "contact",
-                ].map((item, index) => (
+      {/* Mobile Menu - Moved outside the container for better positioning */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.nav
+            className="absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md md:hidden z-50"
+            variants={menuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+          >
+            <ul className="flex flex-col p-4">
+              {["home", "about", "skills", "resume", "projects", "contact"].map(
+                (item, index) => (
                   <motion.li
                     key={item}
                     className="my-2"
@@ -184,27 +184,23 @@ function Header({ activeSection, setActiveSection }) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.05 * index }}
                   >
-                    <a
-                      href={`#${item}`}
-                      className={`block py-2 px-4 rounded-md transition-all duration-300 ${
+                    <button
+                      className={`block w-full text-left py-2 px-4 rounded-md transition-all duration-300 ${
                         activeSection === item
                           ? "bg-violet-900/30 text-violet-400 border-l-2 border-violet-500"
                           : "text-white hover:bg-gray-800 hover:text-violet-400"
                       }`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(item);
-                      }}
+                      onClick={() => handleNavClick(item)}
                     >
                       {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </a>
+                    </button>
                   </motion.li>
-                ))}
-              </ul>
-            </motion.nav>
-          )}
-        </AnimatePresence>
-      </div>
+                )
+              )}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
