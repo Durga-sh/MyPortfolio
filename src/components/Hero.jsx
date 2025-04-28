@@ -130,7 +130,7 @@ function Hero() {
             <div className="w-40 h-40 rounded-full border-4 border-violet-500 overflow-hidden mx-auto relative group">
               {/* Replace with your actual photo URL or add to your assets folder */}
               <img
-                src="assets/images/Durga4.png"
+                src="assets/images/Durga5.png"
                 alt="Durgashankar Puhan"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
