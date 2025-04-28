@@ -10,7 +10,7 @@ function Skills() {
     { name: "TypeScript", percentage: 70 },
     { name: "Spring Boot", percentage: 90 },
     { name: "MongoDB", percentage: 90 },
-    { name: "Database Management", percentage: 75 },
+    { name: "MySQL", percentage: 95 },
   ]
 
   const technologies = [

@@ -58,7 +58,10 @@ function Resume() {
   }
 
   return (
-    <section id="resume" className="py-20 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+    <section
+      id="resume"
+      className="py-20 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute top-1/2 left-1/3 w-96 h-96 bg-purple-700 rounded-full filter blur-[120px]"></div>
@@ -135,7 +138,9 @@ function Resume() {
                     }}
                   >
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                      <h3 className="text-xl font-bold text-white">{item.degree}</h3>
+                      <h3 className="text-xl font-bold text-white">
+                        {item.degree}
+                      </h3>
                       <span className="inline-block px-3 py-1 bg-violet-900/30 text-violet-300 rounded-full text-sm mt-2 md:mt-0 border border-violet-500/30">
                         {item.duration}
                       </span>
@@ -170,7 +175,9 @@ function Resume() {
                     }}
                   >
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                      <h3 className="text-xl font-bold text-white">{item.position}</h3>
+                      <h3 className="text-xl font-bold text-white">
+                        {item.position}
+                      </h3>
                       <span className="inline-block px-3 py-1 bg-violet-900/30 text-violet-300 rounded-full text-sm mt-2 md:mt-0 border border-violet-500/30">
                         {item.duration}
                       </span>
@@ -205,7 +212,9 @@ function Resume() {
                     }}
                   >
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                      <h3 className="text-xl font-bold text-white">{item.name}</h3>
+                      <h3 className="text-xl font-bold text-white">
+                        {item.name}
+                      </h3>
                       <span className="inline-block px-3 py-1 bg-violet-900/30 text-violet-300 rounded-full text-sm mt-2 md:mt-0 border border-violet-500/30">
                         {item.year}
                       </span>
@@ -226,8 +235,8 @@ function Resume() {
           viewport={{ once: true }}
         >
           <motion.a
-            href="assets/Durga Resume.pdf"
-            download="Durgashankar_Resume.pdf"
+            href="assets/Durga Resume 2.pdf"
+            download="DurgaResume.pdf"
             className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 inline-flex items-center shadow-[0_5px_15px_rgba(139,92,246,0.4)]"
             whileHover={{
               scale: 1.05,
@@ -254,7 +263,7 @@ function Resume() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Resume

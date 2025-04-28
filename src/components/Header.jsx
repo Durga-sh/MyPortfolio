@@ -127,7 +127,7 @@ function Header({ activeSection, setActiveSection }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {["home", "about", "skills", "resume", "projects", "contact"].map(
+            {["home",  "skills", "resume", "projects", "contact"].map(
               (item, index) => (
                 <motion.li
                   key={item}

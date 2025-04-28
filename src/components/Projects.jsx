@@ -11,23 +11,32 @@ function Projects() {
       id: 1,
       title: "FINTRACK",
       description:
-        "A fully responsive e-commerce website with user authentication, product filtering, and shopping cart functionality.",
+        "A user-centric personal finance tracking application with Authentication to monitor daily income and expenses. Also enable users to set financial goals, manage budgets .",
       image: "assets/images/C.png",
       category: "Web Development",
-      technologies: ["Angular", "Spring Boot", "MySQL", "Stripe"],
+      technologies: ["Angular", "Spring Boot", "JAVA", "MySQL"],
       demoLink: "#",
       codeLink: "https://github.com/Durga-sh/FinTrack",
     },
     {
       id: 2,
-      title: "BlogSphere",
-      description: " A Dynamic platform for sharing thoughts, expertise through regularly updated articles. ",
-      image: "/assets/images/project3.png",
+      title: "Eventro",
+      description:
+        " A Dynamic platform for Event Management And ticket Booking System with Outh2 Authentication  ",
+      image: "/assets/images/Eventro.png",
       category: "Web Development",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
+      technologies: [
+        "React",
+        "JavaScript",
+        "Express",
+        "MongoDB",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
       demoLink: "#",
-      codeLink: "https://github.com/Durga-sh/BlogSphere",
+      codeLink: "https://github.com/Durga-sh/Eventro",
     },
+
     {
       id: 3,
       title: "StreamBox",
@@ -35,11 +44,23 @@ function Projects() {
         "A video-sharing website allows users to upload, view, and interact with video content across various genres.",
       image: "/assets/images/project3.jpg",
       category: "Web Development",
-      technologies: ["Next.js", "GraphQL", "Tailwind CSS"],
+      technologies: ["React", "Express", "MongoDB", "Tailwind CSS"],
       demoLink: "#",
-      codeLink: "#",
+      codeLink: "https://github.com/Durga-sh/StreamBox",
     },
-  ]
+
+    {
+      id: 4,
+      title: "BlogSphere",
+      description:
+        "A  dynamic content platform enabling users to publish, categorize, and manage posts systematically with Authentication.",
+      image: "/assets/images/project3.png",
+      category: "Web Development",
+      technologies: ["React", "AppWrite", "Tailwind CSS"],
+      demoLink: "#",
+      codeLink: "https://github.com/Durga-sh/BlogSphere",
+    },
+  ];
 
   const categories = ["all", ...new Set(projects.map((project) => project.category))]
 
