@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Resume() {
-  const [activeTab, setActiveTab] = useState("education")
+  const [activeTab, setActiveTab] = useState("education");
 
   const education = [
     {
@@ -12,16 +12,16 @@ function Resume() {
       institution: "Centurion University Of Technology And Management",
       duration: "2022 - 2026",
       CGPA: "9.1",
-      description: "Graduated with honors. Participated in various coding competitions and hackathons.",
+      description:
+        "Graduated with honors. Participated in various coding competitions and hackathons.",
     },
-  ]
+  ];
 
   const experience = [
     {
-    
       description: "Curremtly I am a Fresher.",
     },
-  ]
+  ];
 
   const certifications = [
     {
@@ -29,7 +29,7 @@ function Resume() {
       issuer: "Amazon Web Services",
       year: "2024",
     },
-  ]
+  ];
 
   const tabVariants = {
     inactive: {
@@ -42,7 +42,7 @@ function Resume() {
       scale: 1,
       transition: { duration: 0.3 },
     },
-  }
+  };
 
   const contentVariants = {
     hidden: {
@@ -55,7 +55,7 @@ function Resume() {
       y: 0,
       transition: { duration: 0.3 },
     },
-  }
+  };
 
   return (
     <section
@@ -235,7 +235,7 @@ function Resume() {
           viewport={{ once: true }}
         >
           <motion.a
-            href="assets/Durga Resume 2.pdf"
+            href="assets/DurgaResumeFinal.pdf"
             download="DurgaResume.pdf"
             className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 inline-flex items-center shadow-[0_5px_15px_rgba(139,92,246,0.4)]"
             whileHover={{
@@ -266,4 +266,4 @@ function Resume() {
   );
 }
 
-export default Resume
+export default Resume;
