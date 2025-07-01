@@ -9,14 +9,20 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "FINTRACK",
+      title: "vehiql-AI",
       description:
-        "A user-centric personal finance tracking application with Authentication to monitor daily income and expenses. Also enable users to set financial goals, manage budgets .",
-      image: "assets/images/C.png",
+        "An AI-powered Car MarketPalce built with Next.js, Prisma, PostgreSQL, and Tailwind CSS that enables users to search, compare, and reserve cars based on real-time preferences using intelligent recommendations",
+      image: "assets/images/E.png",
       category: "Web Development",
-      technologies: ["Angular", "Spring Boot", "JAVA", "MySQL"],
-      demoLink: "#",
-      codeLink: "https://github.com/Durga-sh/FinTrack",
+      technologies: [
+        "Next.js",
+        "Prisma",
+        "postgreSQL",
+        "ShadcnUI",
+        "TailwindCSS",
+      ],
+      demoLink: "https://vehiql-ai-theta.vercel.app",
+      codeLink: "https://github.com/Durga-sh/vehiql-AI",
     },
     {
       id: 2,
@@ -33,12 +39,23 @@ function Projects() {
         "Tailwind CSS",
         "Framer Motion",
       ],
-      demoLink: "#",
+      demoLink: "https://eventro-ivory.vercel.app",
       codeLink: "https://github.com/Durga-sh/Eventro",
+    },
+    {
+      id: 3,
+      title: "FINTRACK",
+      description:
+        "A user-centric personal finance tracking application with Authentication to monitor daily income and expenses. Also enable users to set financial goals, manage budgets .",
+      image: "assets/images/C.png",
+      category: "Web Development",
+      technologies: ["Angular", "Spring Boot", "JAVA", "MySQL"],
+      demoLink: "#",
+      codeLink: "https://github.com/Durga-sh/FinTrack",
     },
 
     {
-      id: 3,
+      id: 4,
       title: "StreamBox",
       description:
         "A video-sharing website allows users to upload, view, and interact with video content across various genres.",
@@ -50,14 +67,14 @@ function Projects() {
     },
 
     {
-      id: 4,
+      id: 5,
       title: "BlogSphere",
       description:
         "A  dynamic content platform enabling users to publish, categorize, and manage posts systematically with Authentication.",
       image: "/assets/images/project3.png",
       category: "Web Development",
       technologies: ["React", "AppWrite", "Tailwind CSS"],
-      demoLink: "#",
+      demoLink: "https://blog-virid-eight-90.vercel.app",
       codeLink: "https://github.com/Durga-sh/BlogSphere",
     },
   ];
