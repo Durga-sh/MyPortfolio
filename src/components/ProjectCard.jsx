@@ -1,85 +1,125 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 function ProjectCard({ project }) {
   return (
     <motion.div
-      className="group bg-gray-900/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-violet-500/20 transition-all duration-500 border border-gray-800 hover:border-violet-500/30"
-      initial={{ opacity: 0, y: 20 }}
+      className="group bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-violet-500/25 transition-all duration-500 border border-gray-700/50 hover:border-violet-500/40"
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      whileHover={{ y: -10 }}
+      whileHover={{ y: -8, scale: 1.02 }}
     >
-      <div className="relative overflow-hidden h-64">
+      <div className="relative overflow-hidden h-56">
         <img
-          src={project.image || "/placeholder.svg"}
+          src={
+            project.image ||
+            "/placeholder.svg?height=300&width=400&query=modern project preview"
+          }
           alt={project.title}
-          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
 
-        {/* Overlay with links that appear on hover */}
-        <div className="absolute inset-0 bg-violet-900/70 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-4">
-          <motion.a
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-violet-900 px-4 py-2 rounded-md font-medium transition-all duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Live Demo
-          </motion.a>
-          <motion.a
-            href={project.codeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-transparent border-2 border-white text-white px-4 py-2 rounded-md font-medium transition-all duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Code
-          </motion.a>
+        {/* Enhanced overlay with better positioning */}
+        <div className="absolute inset-0 bg-gradient-to-t from-violet-900/90 via-violet-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-center justify-center">
+          <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+            <motion.a
+              href={project.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-violet-900 px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                ></path>
+              </svg>
+              <span>Live Demo</span>
+            </motion.a>
+            <motion.a
+              href={project.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold backdrop-blur-sm hover:bg-white/10 transition-all duration-300 flex items-center space-x-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                ></path>
+              </svg>
+              <span>Code</span>
+            </motion.a>
+          </div>
         </div>
       </div>
 
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-xl font-bold text-white">{project.title}</h3>
-          <span className="text-xs font-medium bg-violet-900/40 text-violet-300 py-1 px-2 rounded-full border border-violet-500/30">
+      <div className="p-6 space-y-4">
+        <div className="flex items-start justify-between">
+          <h3 className="text-xl font-bold text-white group-hover:text-violet-300 transition-colors duration-300">
+            {project.title}
+          </h3>
+          <span className="text-xs font-semibold bg-gradient-to-r from-violet-500 to-purple-500 text-white py-1.5 px-3 rounded-full shadow-lg">
             {project.category}
           </span>
         </div>
 
-        <p className="text-gray-300 mb-4">{project.description}</p>
+        <p className="text-gray-300 leading-relaxed line-clamp-3">
+          {project.description}
+        </p>
 
-        <div className="flex flex-wrap gap-2 mb-5">
+        <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className="text-xs bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 hover:border-violet-500/30 transition-colors duration-300"
+              className="text-xs bg-gray-700/60 text-gray-200 px-3 py-1.5 rounded-full border border-gray-600/50 hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-violet-300 transition-all duration-300 cursor-default"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center pt-4 border-t border-gray-700/50">
           <motion.a
             href={project.demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-violet-400 hover:text-violet-300 transition-colors duration-300 text-sm font-medium flex items-center"
+            className="text-violet-400 hover:text-violet-300 transition-colors duration-300 text-sm font-semibold flex items-center space-x-1 group/link"
             whileHover={{ x: 3 }}
           >
-            Live Demo
+            <span>Live Demo</span>
             <svg
-              className="w-4 h-4 ml-1"
+              className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
@@ -93,16 +133,15 @@ function ProjectCard({ project }) {
             href={project.codeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-violet-400 hover:text-violet-300 transition-colors duration-300 text-sm font-medium flex items-center"
+            className="text-violet-400 hover:text-violet-300 transition-colors duration-300 text-sm font-semibold flex items-center space-x-1 group/link"
             whileHover={{ x: 3 }}
           >
-            View Code
+            <span>View Code</span>
             <svg
-              className="w-4 h-4 ml-1"
+              className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 strokeLinecap="round"
@@ -115,7 +154,7 @@ function ProjectCard({ project }) {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;

@@ -9,6 +9,17 @@ function Projects() {
   const projects = [
     {
       id: 1,
+      title: "QuickNest",
+      description:
+        "An AI-powered Car MarketPalce built with Next.js, Prisma, PostgreSQL, and Tailwind CSS that enables users to search, compare, and reserve cars based on real-time preferences using intelligent recommendations",
+      image: "assets/images/Quicknest.png",
+      category: "Web Development",
+      technologies: ["React.js", "Express", "mongoDB", "JWT", "TailwindCSS"],
+      demoLink: "https://quick-nest-woad.vercel.app/",
+      codeLink: "https://github.com/Durga-sh/QuickNest",
+    },
+    {
+      id: 2,
       title: "vehiql-AI",
       description:
         "An AI-powered Car MarketPalce built with Next.js, Prisma, PostgreSQL, and Tailwind CSS that enables users to search, compare, and reserve cars based on real-time preferences using intelligent recommendations",
@@ -25,7 +36,7 @@ function Projects() {
       codeLink: "https://github.com/Durga-sh/vehiql-AI",
     },
     {
-      id: 2,
+      id: 3,
       title: "Eventro",
       description:
         " A Dynamic platform for Event Management And ticket Booking System with Outh2 Authentication  ",
@@ -43,7 +54,7 @@ function Projects() {
       codeLink: "https://github.com/Durga-sh/Eventro",
     },
     {
-      id: 3,
+      id: 4,
       title: "FINTRACK",
       description:
         "A user-centric personal finance tracking application with Authentication to monitor daily income and expenses. Also enable users to set financial goals, manage budgets .",
@@ -55,7 +66,7 @@ function Projects() {
     },
 
     {
-      id: 4,
+      id: 5,
       title: "StreamBox",
       description:
         "A video-sharing website allows users to upload, view, and interact with video content across various genres.",
@@ -67,7 +78,7 @@ function Projects() {
     },
 
     {
-      id: 5,
+      id: 6,
       title: "BlogSphere",
       description:
         "A  dynamic content platform enabling users to publish, categorize, and manage posts systematically with Authentication.",

@@ -235,7 +235,7 @@ function Resume() {
           viewport={{ once: true }}
         >
           <motion.a
-            href="assets/DurgaResumeFinal.pdf"
+            href="assets/Durga Resume.pdf"
             download="DurgaResume.pdf"
             className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 inline-flex items-center shadow-[0_5px_15px_rgba(139,92,246,0.4)]"
             whileHover={{
